@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "JetpackPractice"
 include(":app")
- 
+include(":databindingpractice")
