@@ -17,31 +17,50 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:orientation="vertical">
+
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="나이"
-                android:textSize="80sp"/>
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:textSize="50sp"/>
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/ageArea"-->
+            <!--                android:text="@{Integer.toString(vm.mutableAge)}"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:textSize="50sp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:layout_marginTop="50dp"/>-->
 
             <TextView
                 android:id="@+id/ageArea"
-                android:layout_marginTop="100dp"
-                android:layout_width="wrap_content"
+                myAge="@{vm.mutableAge}"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="50sp"
-                android:text="@{Integer.toString(vm.mutableAge)}"/>
+                android:gravity="center"
+                android:layout_marginTop="50dp"/>
+
+            <ImageView
+                android:id="@+id/imgArea"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_margin="60dp"
+                myImg="@{vm.mutableAge}"
+                android:src="@drawable/ic_launcher_background"/>
 
             <Button
-                android:id="@+id/plusBtn"
-                android:layout_marginTop="10dp"
-                android:text="plus"
+                android:id="@+id/plus"
                 android:onClick="@{() -> vm.plus()}"
-                android:layout_width="wrap_content"
+                android:layout_margin="20dp"
+                android:text="+"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-
 
         </LinearLayout>
 
