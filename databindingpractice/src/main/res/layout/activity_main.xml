@@ -17,48 +17,28 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            tools:context=".MainActivity"
             android:orientation="vertical">
 
-
-            <TextView
-                android:text="나이"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:textSize="50sp"/>
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/ageArea"-->
-            <!--                android:text="@{Integer.toString(vm.mutableAge)}"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:textSize="50sp"-->
-            <!--                android:gravity="center"-->
-            <!--                android:layout_marginTop="50dp"/>-->
-
-            <TextView
-                android:id="@+id/ageArea"
-                myAge="@{vm.mutableAge}"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="50sp"
-                android:gravity="center"
-                android:layout_marginTop="50dp"/>
-
             <ImageView
-                android:id="@+id/imgArea"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_margin="60dp"
-                myImg="@{vm.mutableAge}"
-                android:src="@drawable/ic_launcher_background"/>
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                myProgress="@{vm.myPointType}"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_gravity="center"/>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progress="@{vm.point}"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_margin="30dp"/>
 
             <Button
                 android:id="@+id/plus"
-                android:onClick="@{() -> vm.plus()}"
-                android:layout_margin="20dp"
                 android:text="+"
+                android:onClick="@{() -> vm.pointPlus()}"
+                android:layout_margin="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

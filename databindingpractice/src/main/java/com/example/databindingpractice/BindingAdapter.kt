@@ -1,26 +1,19 @@
 package com.example.databindingpractice
 
+import android.graphics.Color
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 
 
-@BindingAdapter("myAge")
-fun myAgeSetting(view : TextView, age : Int) {
+@BindingAdapter("myProgress")
+fun myProgressSetting(view : ImageView, myPointType: MyPointType) {
 
-    if(age > 20) {
-        view.text= age.toString() + "보다 많음"
-    } else {
-        view.text= age.toString()
-    }
-
-}
-
-@BindingAdapter("myImg")
-fun myImageSetting(view : ImageView, age : Int) {
-
-    if(age > 20) {
-        view.setImageResource(R.drawable.ic_launcher_foreground)
+    when(myPointType) {
+        MyPointType.BIG -> {view.setColorFilter(Color.parseColor("#ff4040"))}
+        MyPointType.MIDDLE -> {view.setColorFilter(Color.parseColor("#fa8072"))}
+        MyPointType.SMALL -> {view.setColorFilter(Color.parseColor("#ffb6c1"))}
+        MyPointType.VERY_SMALL -> {view.setColorFilter(Color.parseColor("#000000"))}
     }
 
 }
